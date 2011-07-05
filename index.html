@@ -1,0 +1,27 @@
+<html>
+
+	<head>
+		<title>Test</title>
+		<script type="text/javascript">
+		
+			function trapForApplicationExit()
+			{
+			  blackberry.app.event.onExit(handleExit);
+			}
+			
+			
+			function handleExit()
+			{
+				var answer = confirm("Leave this application?");
+				if (answer)
+				blackberry.app.exit();
+			}
+			
+		</script>
+	</head>
+	
+	<body onload="trapForApplicationExit();">
+		<input type="button" onclick="blackberry.app.exit();" value="Exit Application">
+	</body>
+
+</html>
